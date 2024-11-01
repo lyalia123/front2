@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+@import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 300%;
+  box-sizing: border-box;
+}
+.price-button {
+  background-color: #476C9D;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inder', sans-serif;
+  background: linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.menu:hover {
+  border-bottom: 2px solid white;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-right: 50px;
+}
+
+
+.sign_in {
+  background-color: white;
+  color: #476C9D;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #6A89C9;
+  color: black;
+}
+
+
+.logo {
+  font-family: 'Nico Moji', sans-serif;
+  font-size: 36px;
+  color: white;
+  text-transform: uppercase;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-item {
+display: flex;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Для абсолютного позиционирования wishlist-icon */
+    
+}
+
+.product-item img {
+  padding-top: 13px;
+  width: 100px; /* Размер изображения */
+  height: auto; /* Сохраняем пропорции */
+  transition: transform 0.3s ease;
+  object-fit: cover; /* Масштабирование по размеру контейнера */
+}
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bascket-title {
+  font-family: 'Nico Moji', sans-serif;
+  font-size: 50px;
+  color: white;
+  margin-right: 20px;
+  padding-top: 100px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  text-align: center;
+  margin: 10px;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.checkout {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.checkout button {
+  padding: 10px 20px;
+  
+  border-radius: 4px;
+  
+  color: black;
+  cursor: pointer;
+}
+
+blockquote {
+  margin: 20px 0;
+  font-style: italic;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #476C9D;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.multi-step-form {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.step {
+  margin-bottom: 20px;
+}
+
+
+.filter-section {
+    display: flex; /* Использование flexbox для расположения фильтров */
+    flex-wrap: wrap; /* Перенос на новую строку, если не помещаются */
+    
+}
+
+.filter-section label {
+  margin-top: 10px;
+    margin-right: 10px; /* Отступ справа для меток */
+    font-weight: bold; /* Жирный шрифт для меток */
+    
+}
+
+.filter-section select {
+    padding: 10px; /* Отступы внутри селектов */
+    margin-right: 20px; /* Отступ справа для селектов */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 4px; /* Закругленные углы */
+    background-color: #fff; /* Цвет фона для селектов */
+    font-size: 16px; /* Размер шрифта */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+.filter-section select:focus {
+    border-color: #007bff; /* Цвет рамки при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}

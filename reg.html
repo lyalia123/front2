@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CODS</title>
+    <link rel="stylesheet" href="reg.css">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="form-side shadow p-5 bg-white rounded" style="max-width: 500px; width: 100%;">
+            <h2 class="text">Create an Account</h2>
+            <form id="registrationForm" action="#" method="post" class="needs-validation" novalidate>
+                <label for="username">Username:</label>
+                <input id="username" type="text" class="form-control mb-3" placeholder="Enter your username" required>
+                <span class="error" id="usernameError"></span>
+
+                <label for="email">Email:</label>
+                <input id="email" type="email" class="form-control mb-3" placeholder="Enter your email" required>
+                <span class="error" id="emailError"></span>
+
+                <label for="password">Password:</label>
+                <input id="password" type="password" class="form-control mb-3" placeholder="Enter your password" required>
+                <span class="error" id="passwordError"></span>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input id="confirmPassword" type="password" class="form-control mb-3" placeholder="Confirm your password" required>
+                <span class="error" id="confirmPasswordError"></span>
+
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+                <button id="resetButton" type="button" class="btn btn-secondary w-100 mt-3">Reset</button>
+            </form>
+
+            <div class="social-login d-flex justify-content-around mt-4">
+                <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="social-icon"><i class='bx bxl-google'></i></a>
+                <a href="#" class="social-icon"><i class='bx bxs-phone'></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src = "reg.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+</body>
+</html>

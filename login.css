@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e7eef8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-side {
+    flex: 1;
+    background: linear-gradient(135deg, #476C9D, #7497CF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-side img {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.form-side {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #4f5b78;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #476C9D;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #476C9D;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #365f8a;
+}
+
+.social-login {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.social-icon {
+    margin-top: 20px;
+    font-size: 45px;
+    color: #476C9D;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icon i:hover {
+    transform: scale(1.2);
+}
+.text{
+    font-family: 'Nico Moji', sans-serif;
+}
+.footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+    color: black;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+form {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-inner img {
+    animation: slideFade 0.5s ease-in-out;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+}
+
+button {
+    width: 48%;
+    padding: 15px;
+    margin-top: 10px;
+    background-color: #476C9D;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #365f8a;
+    transform: translateY(-3px);
+}
+
+#registerButton {
+    background-color: #7497CF;
+}
+
+#registerButton:hover {
+    background-color: #476C9D;
+}
+

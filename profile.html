@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODS</title>
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="icon" type="image/x-icon" href="CODS_LOGO.ico">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <script src="profile.js"></script>
+    <header class="header-section"> 
+        <nav id="myNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container ">
+                <a class="navbar-brand" href="#home">CODS</a>
+                <button
+                    class="navbar-toggler hidden-lg-up"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                ></button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul id="menu" class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li tabindex="0" class="nav-item">
+                            <a class="nav-link active" href="front.html" aria-current="page" style="color:#2E4C72 ;">Home
+                                <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li tabindex="0" class="nav-item">
+                            <a class="nav-link" href="index.html">Catalog</a>
+                        </li>
+                        <li tabindex="0" class="nav-item">
+                            <a class="nav-link" href="index2.html">Basket</a>
+                        </li>
+                        <li tabindex="0" class="nav-item">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                        </li>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            Sign in
+                        </button>
+                        
+                    </ul>
+                    <form class="d-flex my-2 my-lg-0">
+                        <input
+                            class="form-control me-sm-2"
+                            type="text"
+                            placeholder="Search"
+                        />
+                        <button
+                            class="btn btn-outline-success my-2 my-sm-0"
+                            type="submit"
+                        >
+                            Search
+                        </button>
+                    </form>
+                    <button
+                            id="changeBtn"
+                            class="btn btn-primary my-1 my-sm-0 mx-4"
+                            type="button"
+                            onclick="changeBackground()"
+                        >
+                            Change Colors
+                        </button>
+                        <audio id="saveSound" src="imgs/save.mp3" preload="auto"></audio>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="main-section">
+        
+        <div class="header-section2">
+            <h2>Profile</h2>
+            <p id="greeting"></p>
+            <button 
+                id="readMoreBtn"
+                class="btn btn-primary"
+                type="button"
+                onclick="readMore()"
+            >Read more</button>
+            <button 
+                id="timeBtn"
+                class="btn btn-primary"
+                type="button"
+            >Time</button>
+                <div id="extraContent">
+                      <p>Here users can view their profile, change it, view their orders, go to 'Boards', settings and ask for help.</p>
+                </div> 
+        </div>
+
+
+        <div class="container text-center">
+            <div class="row">
+              <div class="col col_layout">
+                <div class="profile-block">
+                    <figure style="display: flex; gap: 5px;">
+                        <img id="Gojo" src="imgs/Goju_satoru.JPG" alt="Gojo Satoru">
+                        <div class="profile_name">
+                            <figcaption id="fig_name">Gojo Satoru</figcaption>
+                            <figcaption id="fig_email">goju_s@gmail.com</figcaption>
+                        </div>
+                    </figure>
+                </div>
+                <a href="edit_profile.html" class="btn" id="edit_profile" target="_self">Edit profile</a>
+              </div>
+
+              <div class="col">
+                <div class="my_orders-block">
+                    <a href="#my_orders" class="btn" id="my_orders" target="_self">My orders</a>
+                    <div class="condition-block">
+                        <div class="condition">In progress</div>
+                        <div class="condition">Completed</div>
+                        <div class="condition">Canceled</div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="boards-block">
+                    <a href="#boards" class="btn" id="boards" target="_self">Boards</a>
+                    <div class="boards_imgs">
+                        <img class="imgs" src="imgs/blue_flower.jpg" alt="blue_flower">
+                        <img class="imgs" src="imgs/Blue_bant.jpg" alt="Blue_bant">
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="settings_block">
+                        <div class="set">Geolocation
+                            <button 
+                            class="set_btn"
+                            >Off</button>
+                        </div>
+                        <div class="set">Language
+                            <button class="set_btn">Off</button>
+                        </div>
+                        <div class="set">Notification
+                            <button class="set_btn">Off</button>
+                        </div>
+                    </div>
+                    <a href="#setings" class="btn" id="settings" target="_self">Settings</a>
+                </div>
+                <div class="col">
+                    <a href="#contact_us" class="btn" id="contact_us" target="_self">Contuct us</a>
+                    <div class="contact-block">
+                        <p>IDcods2023@gmail.com</p>
+                        <p>+7 777 34 2178</p>
+                        <p>Guide</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        
+    </main>
+
+    <footer id="myFooter" class="footer-section">
+        <p>Created by Ussurbayeva Inkar, Ablanova Dariya, Alpieva Leila.</p>
+        <a href="#top">Back to top</a>
+    </footer>
+
+</body>
+</html>

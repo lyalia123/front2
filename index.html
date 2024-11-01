@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(255, 255, 255, 0.4);">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="#" style="color: white; font-size: 36px; text-transform: uppercase;">CODS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" id="navMenu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="front.html" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: white;">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index2.html" style="color: white;">Basket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" style="color: white;">Profile</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-outline-light" style="margin-left: 20px;">Sign in</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="catalog-container">
+        <div class="search-bar">
+            <div class="catalog-title">Catalog</div>
+            <input type="text" class="search-input" placeholder="Search">
+            <select id="category" name="category">
+                <option value="women">Women</option>
+                <option value="men">Men</option>
+                <option value="kids">Kids</option>
+            </select>
+        </div>
+
+        <div id="productCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-around">
+                        <div class="product-item text-center">
+                            <img src="images/tshirt.jpg" alt="T-Shirt" class="img-fluid" style="width: 100px;">
+                            <p>T-Shirt</p>
+                        </div>
+                        <div class="product-item text-center">
+                            <img src="images/outerwear.jpg" alt="Outerwear" class="img-fluid" style="width: 100px;">
+                            <p>Outerwear</p>
+                        </div>
+                        <div class="product-item text-center">
+                            <img src="images/rousers.jpg" alt="Trousers" class="img-fluid" style="width: 100px;">
+                            <p>Trousers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-around">
+                        <div class="product-item text-center">
+                            <img src="images/shoes.jpg" alt="Shoes" class="img-fluid" style="width: 100px;">
+                            <p>Shoes</p>
+                        </div>
+                        <div class="product-item text-center">
+                            <img src="images/necklace.jpg" alt="Necklace" class="img-fluid" style="width: 100px;">
+                            <p>Necklace</p>
+                        </div>
+                        <div class="product-item text-center">
+                            <img src="images/dress.jpg" alt="Dresses" class="img-fluid" style="width: 100px;">
+                            <p>Dresses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-around">
+                        <div class="product-item text-center">
+                            <img src="images/bagss.jpg" alt="Bags" class="img-fluid" style="width: 100px;">
+                            <p>Bags</p>
+                        </div>
+                        <div class="product-item text-center">
+                            <img src="images/jacket.jpg" alt="Jackets" class="img-fluid" style="width: 100px;">
+                            <p>Jackets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+
+        <div class="accordion">
+            <h3 onclick="toggleAnswer('answer1')">Сan I make a return of a product?</h3>
+            <div id="answer1" class="answer" style="display: none;">Yes, you can contact us if you have problems with returning a product.</div>
+            
+            <h3 onclick="toggleAnswer('answer2')">Can I pay with Kaspi?</h3>
+            <div id="answer2" class="answer" style="display: none;">Yes, we have different paying systems.</div>
+        </div>
+        <div id="greeting" class="greeting" style="margin-top: 20px; font-size: 24px;"></div> <!-- Greeting display -->
+
+        <button id="timeButton">Show the current time</button>
+        <div id="dateTime"></div>
+    </div>
+
+    <footer>
+        <p>Created by Leila A, Inkar U, Dariya A</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
