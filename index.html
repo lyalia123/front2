@@ -1,131 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <title>CODS</title>
+    <link rel="icon" type="image/x-icon" href="imgs/CODS_LOGO.ico">
+    <link rel="stylesheet" href="front.css">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(255, 255, 255, 0.4);">
-        <div class="container justify-content-center">
-            <a class="navbar-brand" href="#" style="color: white; font-size: 36px; text-transform: uppercase;">CODS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <header class="header">
+        <nav id="myNavbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container ">
+                <a class="navbar-brand" href="front.html">CODS</a>
+                <button
+                    class="navbar-toggler hidden-lg-up"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                ><span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav" id="navMenu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="front.html" style="color: white;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" style="color: white;">Catalog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index2.html" style="color: white;">Basket</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="" style="color: white;">Profile</a>
-                    </li>
-                </ul>
-                <a href="#" class="btn btn-outline-light" style="margin-left: 20px;">Sign in</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul id="menu" class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html" aria-current="page" style="color:#2E4C72 ;">Home
+                                <span class="visually-hidden">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="frontlya.html">Catalog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index2.html">Basket</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                        </li>
+                    </ul>
+                    <button id="logoutButton" class="btn">Logout</button>
+                
+
+                    <button
+                            id="changeBtn"
+                            class="btn my-1 my-sm-0 mx-4"
+                            type="button"
+                            onclick="changeBackground()"
+                        >
+                            Change Theme
+                    </button>
+                </div>
             </div>
-        </div>
-    </nav>
-    
-    <div class="catalog-container">
-        <div class="search-bar">
-            <div class="catalog-title">Catalog</div>
-            <input type="text" class="search-input" placeholder="Search">
-            <select id="category" name="category">
-                <option value="women">Women</option>
-                <option value="men">Men</option>
-                <option value="kids">Kids</option>
-            </select>
+        </nav>
+</header>
+
+    <main>
+        <div class="background-text">
+            <span class="co">CO</span>
+            <span class="ds">DS</span>
         </div>
 
-        <div id="productCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-around">
-                        <div class="product-item text-center">
-                            <img src="images/tshirt.jpg" alt="T-Shirt" class="img-fluid" style="width: 100px;">
-                            <p>T-Shirt</p>
+        <section class="info">
+            <div class="text">
+                <div class="why">
+                    <h2>Why CODS?</h2>
+                </div>
+                <section class="cards-section mt-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="custom-card card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fast Delivery</h5>
+                                    <p class="card-text">Receive your order in no time with CODS's quick delivery options.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-item text-center">
-                            <img src="images/outerwear.jpg" alt="Outerwear" class="img-fluid" style="width: 100px;">
-                            <p>Outerwear</p>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="custom-card card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Best Prices</h5>
+                                    <p class="card-text">Browse top brands at affordable prices with CODS.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-item text-center">
-                            <img src="images/rousers.jpg" alt="Trousers" class="img-fluid" style="width: 100px;">
-                            <p>Trousers</p>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="custom-card card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Variety</h5>
+                                    <p class="card-text">CODS offers a wide variety of clothing from many retailers.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-around">
-                        <div class="product-item text-center">
-                            <img src="images/shoes.jpg" alt="Shoes" class="img-fluid" style="width: 100px;">
-                            <p>Shoes</p>
+                </section>
+
+                <section class="faq mt-5">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="accordion rounded-4" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    What is CODS?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    CODS is an online platform offering a variety of products at competitive prices.
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-item text-center">
-                            <img src="images/necklace.jpg" alt="Necklace" class="img-fluid" style="width: 100px;">
-                            <p>Necklace</p>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How fast is the delivery?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We guarantee fast delivery within 2-3 days, depending on your location.
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-item text-center">
-                            <img src="images/dress.jpg" alt="Dresses" class="img-fluid" style="width: 100px;">
-                            <p>Dresses</p>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What products are available?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a range of clothing, shoes, and accessories from various top retailers and brands.
+                                </div>
+                            </div> 
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-around">
-                        <div class="product-item text-center">
-                            <img src="images/bagss.jpg" alt="Bags" class="img-fluid" style="width: 100px;">
-                            <p>Bags</p>
-                        </div>
-                        <div class="product-item text-center">
-                            <img src="images/jacket.jpg" alt="Jackets" class="img-fluid" style="width: 100px;">
-                            <p>Jackets</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+                </section>
+
         
+                <section id="myAdditionalQuestion" class="additional-questions mt-5">
+                    <h3 id="myQuestionHandling" class="question-heading me-3">If you have additional questions, please let us know:</h3>
+                    <div class="question-input-container">
+                        <input type="text" id="nameInput" class="question-input" placeholder="Enter your name" />
+                        <button id="submitNameButton" class="btn submit-button">Submit</button>
+                    </div>
+                    <p id="greetingMessage" class="greeting-message ms-3"></p>
+                </section>
+                
+            </div>
+        </section>
+    </main>
 
-        <div class="accordion">
-            <h3 onclick="toggleAnswer('answer1')">Сan I make a return of a product?</h3>
-            <div id="answer1" class="answer" style="display: none;">Yes, you can contact us if you have problems with returning a product.</div>
-            
-            <h3 onclick="toggleAnswer('answer2')">Can I pay with Kaspi?</h3>
-            <div id="answer2" class="answer" style="display: none;">Yes, we have different paying systems.</div>
-        </div>
-        <div id="greeting" class="greeting" style="margin-top: 20px; font-size: 24px;"></div> <!-- Greeting display -->
-
-        <button id="timeButton">Show the current time</button>
-        <div id="dateTime"></div>
-    </div>
-
-    <footer>
-        <p>Created by Leila A, Inkar U, Dariya A</p>
+    <footer id="myFooter" class="footer-section text-white text-center p-3 mt-5 bottom-0 start-0 w-100">
+        <p>Created by Ussurbayeva Inkar, Ablanova Dariya, Alpieva Leila.</p>
+        <a id="footer_text" href="#top">Back to top</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="login.js"></script>
+    <script src="front.js"></script>
+    
+
 </body>
 </html>

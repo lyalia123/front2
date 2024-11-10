@@ -1,42 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
-@import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inder', sans-serif;
+
+body{
     background: linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72);
-    height: 115vh;
-    display: flex;
-    flex-direction: column;
+    font-family: 'JetBrains Mono';
+    height: 100vh;
+    background-size: cover; 
 }
-
-.header {
-  background-color: rgba(255, 255, 255, 0.4);
-  color: white;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  padding: 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ----- Navigation -----*/
+#myNavbar .nav-link{
+    color: #2E4C72;
 }
-
-
-footer {
+.navbar .navbar-brand{
+    font-family: 'Nico Moji';
+    font-size: 2rem;
+    color: #476C9D;
+}
+#myNavbar .navbar-brand:hover{
+    color:#2E4C72
+}
+#myNavbar .btn:hover{
+    color: white;
+}
+button.btn{
     background-color: #476C9D;
     color: white;
-    text-align: center;
-    padding: 10px;
+}
+button.btn:hover{
+    background-color: #2E4C72;
+    color: white;
+}
+.footer-section{
     position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+    background-color: #476C9D;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+#footer_text:hover{
+    color: #7497CF;
+}
+.footer-section a{
+    text-decoration: none;
+    color: white;
+}
+#productCarousel{
+    width: 70%;
+}
 .logo {
     font-family: 'Nico Moji', sans-serif;
     font-size: 36px;
@@ -44,36 +53,56 @@ footer {
     text-transform: uppercase;
 }
 
-.navbar {
-    margin: 0; /* Убираем отступы */
-}
-
-.menu {
-    padding: 10px; /* Добавляем отступы к элементам меню */
-}
-
-.menu:hover {
-    border-bottom: 2px solid white;
-}
-
-.sign_in {
-    background-color: white;
-    color: #476C9D;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sign_in:hover {
-    background-color: #476C9D;
-    color: white;
-}
-
 .catalog-container {
     margin-top: 100px;
     text-align: center;
+}
+/* Стили для больших экранов (например, для компьютеров) */
+@media (min-width: 1024px) {
+    /* Стили для компьютеров */
+    body {
+        font-size: 18px;
+        padding: 2rem;
+    }
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    .footer-section {
+        padding: 2rem;
+    }
+    /* Другие стили для больших экранов */
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Стили для планшетов */
+    body {
+        font-size: 16px;
+        padding: 1.5rem;
+    }
+    .navbar {
+        padding: 0.75rem 1.5rem;
+    }
+    .footer-section {
+        padding: 1.5rem;
+    }
+    /* Другие стили для планшетов */
+}
+
+/* Стили для телефонов */
+@media (max-width: 767px) {
+    /* Стили для телефонов */
+    body {
+        font-size: 14px;
+        padding: 1rem;
+    }
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    .footer-section {
+        padding: 1rem;
+    }
+    /* Другие стили для телефонов */
 }
 
 .search-bar {
@@ -99,38 +128,26 @@ footer {
     font-size: 16px;
 }
 
-
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 40px;
-    justify-items: center;
-}
-
 .product-item {
-  width: 150px;
-  height: 170px;
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column; /* Элементы выстраиваются в колонку */
-  justify-content: space-between; /* Добавляем расстояние между элементами */
-  align-items: center;
-  color: #476C9D;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Чтобы изображение не выходило за пределы */
- 
-  text-align: center; /* Центрируем текст */
-}
-
+    width: 150px;
+    height: 170px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Элементы выстраиваются в колонку */
+    justify-content: space-between; /* Добавляем расстояние между элементами */
+    align-items: center;
+    color: #476C9D;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Чтобы изображение не выходило за пределы */
+   
+    text-align: center; /* Центрируем текст */
+  }
 .product-item img {
-  padding-top: 13px;
-  width: 100px; /* Размер изображения */
+  width: 70%; /* Размер изображения */
   height: auto; /* Сохраняем пропорции */
   transition: transform 0.3s ease;
   object-fit: cover; /* Масштабирование по размеру контейнера */
@@ -154,3 +171,4 @@ footer {
     margin: 50px; /* Отступы между продуктами */
     text-align: center; /* Центрируем текст */
 }
+

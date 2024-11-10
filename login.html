@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="login.css">
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imgs/CODS_LOGO.ico">
+    <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -38,43 +40,32 @@
             <h2 class="text">Do you have an account?</h2>
             <form id="contactForm" action="#" method="post">
                 <label for="email">Email:</label>
-                <input id="email"> 
+                <input id="email" type="email" class="form-control">
                 <span class="error" id="emailError"></span>
 
                 <label for="password">Password:</label>
-                <input id="password"> 
+                <input id="password" type="password" class="form-control">
                 <span class="error" id="passwordError"></span>
 
                 <div class="button-group">
                     <button type="submit" class="btn btn-primary">Sign In</button>
-                    <button id="registerButton" class="btn btn-primary registerButton">Register</button>
-                   
+                    <button id="registerButton" type="button" class="btn btn-primary registerButton">Register</button>
+
                 </div>
                 <button id="resetButton" type="reset" class="btn btn-danger mt-4">Reset</button>
-
-                
-
-                
-
-
             </form>
 
-            <div class="social-login">
-                <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxl-google'></i></a>
-                <a href="#" class="social-icon"><i class='bx bxs-phone'></i></a>
-            </div>
-            <p>Register</p>
-        </div>
-        
+            
+
         <footer class="footer">
             <p>Created by Ussurbayeva Inkar, Ablanova Dariya, Alpieva Leila.</p>
         </footer>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js.js"></script> 
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

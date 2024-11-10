@@ -4,62 +4,64 @@
 body{
     background: linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72);
     font-family: 'JetBrains Mono';
-    margin: 0;
-    margin: 0; 
-    padding: 0; 
     height: 100vh;
     background-size: cover; 
 }
+/* ----- Navigation -----*/
 .navbar .nav-link{
     color: #2E4C72;
 }
-
 .navbar .navbar-brand{
     font-family: 'Nico Moji';
     font-size: 2rem;
     color: #476C9D;
 }
-.navbar .btn{
+.navbar .navbar-brand:hover{
+    color:#2E4C72
+}
+/* Стили для больших экранов (например, для компьютеров) */
+@media (min-width: 1024px) {
+    /* Твои стили для компьютера */
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Твои стили для планшета */
+}
+
+/* Стили для телефонов */
+@media (max-width: 767px) {
+    /* Твои стили для телефона */
+}
+.navbar .btn:hover{
+    color: white;
+}
+/* ----- Main -----*/
+.main-section{
+   margin-top: 6%;
+   color: white;
+}
+button.btn{
     background-color: #476C9D;
     color: white;
 }
-button.btn-primary{
-    background-color: #476C9D;
-    border: white;
-}
-button.btn-primary:hover{
-    background-color: #2E4C72;
-    color: white;
-}
-button.btn-outline-success{
-    background-color: #476C9D;
-    border: white;
-}
-button.btn-outline-success:hover{
+button.btn:hover{
     background-color: #7497CF;
 }
-.main-section{
-    margin-top: 6%;
-}
 .header-section2{
-    margin-left: 50px;
     color: white;
     font-size: 20px;
-    margin-bottom: 20px;
-}
-h2{
-    font-family: 'Nico Moji';
 }
 #extraContent{
     display: none;
 }
-.main-section .container{
-    width: 40%;
-    float: left;
-    margin-left: 5%;
-    display: grid;
-    color: white;
-    
+h2{
+    font-family: 'Nico Moji';
+}
+#myContainer{
+    background-color: white;
+    color:#476C9D;
+    box-shadow: "0px 4px 8px rgba(69, 101, 145, 0.5)";
 }
 #Gojo{
     height: 120px;
@@ -71,45 +73,31 @@ h2{
 #Gojo:hover{
     filter: brightness(0.5);
 }
-
+.container .form-control{
+    border-color: #476C9D;
+}
 .select-class{
     font-size: 15px;
-    width: 70px;
-    height: 30px;
-    border-radius: 8px;
     color: #476C9D;
 }
-.select_birthday-block{
-    display: flex;
-    align-items: center;
-    gap:15px;
-}
-#day{
-    font-size: 15px;
-    border-radius: 8px;
-    color: #476C9D;
-    width: 40px;
-    height: 30px;
+.main-section .container{
+    display: grid;
 }
 #blue_model{
     height: 60%;
-    position: relative;
-    align-items: center;
 }
+/* ----- Footer -----*/
 blockquote{
-    color: #476C9D;
+    color: white;
 }
 .footer-section{
-    background-color: #476C9D;
-    color: white;
-    text-align: center;
-    padding: 10px;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    background-color: #476C9D;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+}
+#footer_text:hover{
+    color: #7497CF;
 }
 .footer-section a{
     text-decoration: none;

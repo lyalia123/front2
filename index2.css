@@ -1,11 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
-@import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 300%;
-  box-sizing: border-box;
+body{
+  background: linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72);
+  font-family: 'JetBrains Mono';
+  height: 130vh;
+  background-size: cover; 
+}
+/* ----- Navigation -----*/
+#myNavbar .nav-link{
+  color: #2E4C72;
+}
+#myNavbar .navbar-brand{
+  font-family: 'Nico Moji';
+  font-size: 2rem;
+  color: #476C9D;
+}
+.navbar .navbar-brand:hover{
+  color:#2E4C72
+}
+.navbar .btn:hover{
+  color: white;
+}
+button.btn{
+  background-color: #476C9D;
+  color: white;
+}
+button.btn:hover{
+  background-color: #2E4C72;
+  color: white;
+}
+/* Стили для больших экранов (например, для компьютеров) */
+@media (min-width: 1024px) {
+  /* Твои стили для компьютера */
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Твои стили для планшета */
+}
+
+/* Стили для телефонов */
+@media (max-width: 767px) {
+  /* Твои стили для телефона */
 }
 .price-button {
   background-color: #476C9D;
@@ -17,69 +53,6 @@ html, body {
   cursor: pointer;
   align-self: flex-start;
 }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inder', sans-serif;
-  background: linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.header {
-  background-color: rgba(255, 255, 255, 0.4);
-  color: white;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  padding: 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu {
-  text-decoration: none;
-  color: white;
-  font-size: large;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-.menu:hover {
-  border-bottom: 2px solid white;
-}
-
-.navbar {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin-right: 50px;
-}
-
-
-.sign_in {
-  background-color: white;
-  color: #476C9D;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.main-nav a:hover {
-  background-color: #6A89C9;
-  color: black;
-}
-
-
 .logo {
   font-family: 'Nico Moji', sans-serif;
   font-size: 36px;
@@ -89,45 +62,84 @@ body {
 
 main {
   flex-grow: 1;
-  padding: 20px;
+  margin-top: 6%;
 }
-
+.catalog-container{
+  color: #2E4C72;
+}
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   padding: 40px;
   justify-items: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .product-item {
-display: flex;
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; /* Для абсолютного позиционирования wishlist-icon */
-    
+  width: 100%;
+  max-width: 230px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-item img {
-  padding-top: 13px;
-  width: 100px; /* Размер изображения */
-  height: auto; /* Сохраняем пропорции */
-  transition: transform 0.3s ease;
-  object-fit: cover; /* Масштабирование по размеру контейнера */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  
 }
 .product-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
+.product-item p {
+  font-size: 1.1rem;
+  color: #2E4C72;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.product-item .price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #476C9D;
+  margin: 10px 0;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rating .star {
+  color: gold;
+  font-size: 18px;
+  margin: 0 2px;
+}
+.price-button {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #476C9D;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.price-button:hover {
+  background-color: #2E4C72;
+}
 .bascket-title {
   font-family: 'Nico Moji', sans-serif;
   font-size: 50px;
@@ -178,14 +190,17 @@ ul {
   text-align: center;
 }
 
-footer {
+.footer-section{
   background-color: #476C9D;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+#footer_text:hover{
+  color: #7497CF;
+}
+.footer-section a{
+  text-decoration: none;
   color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 .popup {
   display: none;
@@ -218,19 +233,19 @@ footer {
 
 .filter-section label {
   margin-top: 10px;
-    margin-right: 10px; /* Отступ справа для меток */
-    font-weight: bold; /* Жирный шрифт для меток */
+  margin-right: 10px; /* Отступ справа для меток */
     
 }
 
 .filter-section select {
-    padding: 10px; /* Отступы внутри селектов */
-    margin-right: 20px; /* Отступ справа для селектов */
-    border: 1px solid #ccc; /* Цвет рамки */
-    border-radius: 4px; /* Закругленные углы */
-    background-color: #fff; /* Цвет фона для селектов */
-    font-size: 16px; /* Размер шрифта */
-    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+  color: #2E4C72;
+  padding: 10px; /* Отступы внутри селектов */
+  margin-right: 20px; /* Отступ справа для селектов */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 4px; /* Закругленные углы */
+  background-color: #fff; /* Цвет фона для селектов */
+  font-size: 16px; /* Размер шрифта */
+  transition: border-color 0.3s; /* Плавный переход цвета рамки */
 }
 
 .filter-section select:focus {

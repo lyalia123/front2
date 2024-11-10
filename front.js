@@ -1,114 +1,121 @@
+const backColors = [
+    "linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72)",
+    "linear-gradient(to bottom right, #18283D, #2F4E75, #18283D)"
+];
+const footColor = ["#476C9D", "#18283D"];
+const btnColor = ["#476C9D", "#18283D"];
+const btnColor2 = ["#476C9D", "#284163"];
+const inputColor = ["#FFFFFF", "#2C394A"];
+const setColor = ["#7497CF", "#35547E"];
+const containerColor = ["#FFFFFF", "#506682"];
+const containerShadow = ["0px 4px 8px rgba(69, 101, 145, 0.5)", "0px 4px 8px rgba(31, 46, 65, 0.5)"];
+const navlinkColor = ["#2E4C72", "#FFFFFF"];
+const contactUsColor = ["#476C9D", "#FFFFFF"];
 
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
+let currentColorIndex = 0;
+
+function changeBackground() {
+    currentColorIndex = (currentColorIndex + 1) % backColors.length;
+    document.body.style.background = backColors[currentColorIndex];
+    
+    const footer = document.getElementById("myFooter");
+    if (footer) footer.style.background = footColor[currentColorIndex];
+
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => btn.style.backgroundColor = btnColor[currentColorIndex]);
+    const changeBtn = document.getElementById("changeBtn");
+    if (changeBtn) changeBtn.style.backgroundColor = btnColor2[currentColorIndex];
+
+    const logoutButton = document.getElementById("logoutButton");
+    if (logoutButton) logoutButton.style.backgroundColor = btnColor2[currentColorIndex];
+
+    const cards = document.querySelectorAll('.custom-card');
+    cards.forEach(card => {
+        card.style.backgroundColor = containerColor[currentColorIndex];
+        card.style.boxShadow = containerShadow[currentColorIndex];
+        card.style.color = navlinkColor[currentColorIndex];
+    });
+
+    const additionalQuestion = document.getElementById("myAdditionalQuestion");
+    if (additionalQuestion) additionalQuestion.style.backgroundColor = containerColor[currentColorIndex];
+    
+    const questionHeading = document.getElementById("myQuestionHandling");
+    if (questionHeading) questionHeading.style.color = navlinkColor[currentColorIndex];
+
+    const nameInput = document.getElementById("nameInput");
+    if (nameInput) {
+        nameInput.style.backgroundColor = inputColor[currentColorIndex];
+        nameInput.style.color = navlinkColor[currentColorIndex];
+    }
+
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(accItem => {
+        accItem.style.backgroundColor = containerColor[currentColorIndex];
+        accItem.style.color = navlinkColor[currentColorIndex];
+    });
+
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    accordionButtons.forEach(accBtn => {
+        accBtn.style.backgroundColor = containerColor[currentColorIndex];
+        accBtn.style.color = navlinkColor[currentColorIndex];
+    });
+
+    const greetingMessage = document.getElementById("greetingMessage");
+    if (greetingMessage) greetingMessage.style.color = navlinkColor[currentColorIndex];
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
+
+    const navbar = document.getElementById('myNavbar');
+    if (navbar) {
+        if (navbar.classList.contains('navbar-light')) {
+            navbar.classList.replace('navbar-light', 'navbar-dark');
+            navbar.classList.replace('bg-light', 'bg-dark');
+        } else {
+            navbar.classList.replace('navbar-dark', 'navbar-light');
+            navbar.classList.replace('bg-dark', 'bg-light');
+        }
+    }
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-   
-    const toggleButton = document.querySelector('.btn.btn-secondary');
-   
-    toggleButton.addEventListener('click', toggleTheme);
-
-   
-    const categories = document.querySelectorAll('.nav-item .nav-link');
-    
-    categories.forEach(category => {
-        category.addEventListener('click', (event) => {
-            event.preventDefault();
-            const selectedCategory = category.getAttribute('href').substring(1);
-            localStorage.setItem('selectedCategory', selectedCategory); 
-        });
+categories.forEach(category => {
+    category.addEventListener('click', (event) => {
+        const selectedCategory = category.getAttribute('href');
+        localStorage.setItem('selectedCategory', selectedCategory); // сохраняем выбранную категорию
+        window.location.href = selectedCategory; // вручную перенаправляем на выбранную страницу
     });
-    document.getElementById('submitNameButton').addEventListener('click', function() {
-        const name = document.getElementById('nameInput').value;
-  
-        if (name.trim() !== "") {
-            document.getElementById('greetingMessage').textContent = 'Hello, ' + name + '! Thank you for your question.';
-        } else {
-            document.getElementById('greetingMessage').textContent = 'Please enter your name.';
+});
+
+
+    const submitNameButton = document.getElementById('submitNameButton');
+    if (submitNameButton) {
+        submitNameButton.addEventListener('click', () => {
+            const name = document.getElementById('nameInput').value;
+            const greetingMessage = document.getElementById('greetingMessage');
+            if (greetingMessage) {
+                greetingMessage.textContent = name.trim() ? `Hello, ${name}! Thank you for your question.` : 'Please enter your name.';
+                greetingMessage.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    greetingMessage.style.transform = 'scale(1)';
+                }, 500);
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        const categories = document.querySelectorAll('.nav-item .nav-link');
+        let currentIndex = Array.from(categories).findIndex(item => document.activeElement === item);
+        if (event.key === 'ArrowRight' && currentIndex < categories.length - 1) {
+            categories[currentIndex + 1].focus();
+        } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+            categories[currentIndex - 1].focus();
         }
     });
-    greetingMessage.style.transform = 'scale(1.1)';
-    setTimeout(() => {
-        greetingMessage.style.transform = 'scale(1)';
-    }, 500); 
 
-function updateLanguage(language) {
-    switch (language) {
-        case 'en':
-            document.getElementById('greetingMessage').textContent = 'Hello, welcome to CODS!';
-            document.querySelector('.why h2').textContent = 'Why CODS?';
-            document.querySelectorAll('.card-title')[0].textContent = 'Fast Delivery';
-            document.querySelectorAll('.card-text')[0].textContent = 'Receive your order in no time with CODS\'s quick delivery options.';
-            document.querySelectorAll('.card-title')[1].textContent = 'Best Prices';
-            document.querySelectorAll('.card-text')[1].textContent = 'Browse top brands at affordable prices with CODS.';
-            document.querySelectorAll('.card-title')[2].textContent = 'Variety';
-            document.querySelectorAll('.card-text')[2].textContent = 'CODS offers a wide variety of clothing from many retailers.';
-            document.querySelector('.faq h2').textContent = 'Frequently Asked Questions';
-            document.querySelectorAll('.accordion-button')[0].textContent = 'What is CODS?';
-            document.querySelectorAll('.accordion-body')[0].textContent = 'CODS is an online platform offering a variety of products at competitive prices.';
-            document.querySelectorAll('.accordion-button')[1].textContent = 'How fast is the delivery?';
-            document.querySelectorAll('.accordion-body')[1].textContent = 'We guarantee fast delivery within 2-3 days, depending on your location.';
-            document.querySelectorAll('.accordion-button')[2].textContent = 'What products are available?';
-            document.querySelectorAll('.accordion-body')[2].textContent = 'We offer a range of clothing, shoes, and accessories from various top retailers and brands.';
-            break;
-
-        case 'ru':
-            document.getElementById('greetingMessage').textContent = 'Привет, добро пожаловать в CODS!';
-            document.querySelector('.why h2').textContent = 'Почему CODS?';
-            document.querySelectorAll('.card-title')[0].textContent = 'Быстрая доставка';
-            document.querySelectorAll('.card-text')[0].textContent = 'Получите свой заказ в кратчайшие сроки с помощью быстрых вариантов доставки CODS.';
-            document.querySelectorAll('.card-title')[1].textContent = 'Лучшие цены';
-            document.querySelectorAll('.card-text')[1].textContent = 'Просматривайте лучшие бренды по доступным ценам с CODS.';
-            document.querySelectorAll('.card-title')[2].textContent = 'Разнообразие';
-            document.querySelectorAll('.card-text')[2].textContent = 'CODS предлагает широкий ассортимент одежды от многих ритейлеров.';
-            document.querySelector('.faq h2').textContent = 'Часто задаваемые вопросы';
-            document.querySelectorAll('.accordion-button')[0].textContent = 'Что такое CODS?';
-            document.querySelectorAll('.accordion-body')[0].textContent = 'CODS — это онлайн-платформа, предлагающая разнообразные товары по конкурентоспособным ценам.';
-            document.querySelectorAll('.accordion-button')[1].textContent = 'Насколько быстрая доставка?';
-            document.querySelectorAll('.accordion-body')[1].textContent = 'Мы гарантируем быструю доставку в течение 2-3 дней в зависимости от вашего местоположения.';
-            document.querySelectorAll('.accordion-button')[2].textContent = 'Какие продукты доступны?';
-            document.querySelectorAll('.accordion-body')[2].textContent = 'Мы предлагаем широкий ассортимент одежды, обуви и аксессуаров от различных ведущих ритейлеров и брендов.';
-            break;
-
-        case 'kz':
-            document.getElementById('greetingMessage').textContent = 'Сәлеметсіз бе, CODS-қа қош келдіңіз!';
-            document.querySelector('.why h2').textContent = 'Неге CODS?';
-            document.querySelectorAll('.card-title')[0].textContent = 'Жылдам жеткізу';
-            document.querySelectorAll('.card-text')[0].textContent = 'CODS жылдам жеткізу нұсқаларымен тапсырысыңызды лезде алыңыз.';
-            document.querySelectorAll('.card-title')[1].textContent = 'Үздік бағалар';
-            document.querySelectorAll('.card-text')[1].textContent = 'CODS арқылы қолжетімді бағамен үздік брендтерді қараңыз.';
-            document.querySelectorAll('.card-title')[2].textContent = 'Әртүрлілік';
-            document.querySelectorAll('.card-text')[2].textContent = 'CODS көптеген бөлшек саудагерлерден киімдердің кең ассортиментін ұсынады.';
-            document.querySelector('.faq h2').textContent = 'Жиі қойылатын сұрақтар';
-            document.querySelectorAll('.accordion-button')[0].textContent = 'CODS дегеніміз не?';
-            document.querySelectorAll('.accordion-body')[0].textContent = 'CODS - бәсекеге қабілетті бағамен әртүрлі өнімдерді ұсынатын онлайн платформа.';
-            document.querySelectorAll('.accordion-button')[1].textContent = 'Жеткізу қаншалықты жылдам?';
-            document.querySelectorAll('.accordion-body')[1].textContent = 'Біз жеткізуді сіздің орналасқан жеріңізге байланысты 2-3 күн ішінде жылдам жүзеге асырамыз.';
-            document.querySelectorAll('.accordion-button')[2].textContent = 'Қандай өнімдер қол жетімді?';
-            document.querySelectorAll('.accordion-body')[2].textContent = 'Біз әртүрлі жетекші бөлшек саудагерлер мен брендтерден киім, аяқ киім және аксессуарларды ұсынамыз.';
-            break;
-
-        default:
-            console.error('Unsupported language selected');
+    const logoutButton = document.getElementById("logoutButton");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", () => {
+            window.location.href = "login.html";
+        });
     }
-}
 
-document.getElementById('languageSelector').addEventListener('change', function() {
-    const selectedLanguage = this.value;
-    updateLanguage(selectedLanguage);
-});
-document.addEventListener('keydown', function(event) {
-    const categories = document.querySelectorAll('.nav-item .nav-link');
-    let currentIndex = Array.from(categories).findIndex(item => document.activeElement === item);
-
-    if (event.key === 'ArrowRight' && currentIndex < categories.length - 1) {
-        categories[currentIndex + 1].focus();
-    } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
-        categories[currentIndex - 1].focus();
-    }
-});
-
-    
-});

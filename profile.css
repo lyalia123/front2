@@ -11,47 +11,46 @@ body{
 .navbar .nav-link{
     color: #2E4C72;
 }
-
 .navbar .navbar-brand{
     font-family: 'Nico Moji';
     font-size: 2rem;
     color: #476C9D;
 }
-.container .btn{
-    background-color: #476C9D;
+.navbar .navbar-brand:hover{
+    color:#2E4C72
+}
+.navbar .btn:hover{
     color: white;
-    cursor: pointer;
-}
-.container .btn:hover{
-    background-color: #2E4C72;
-}
-button.btn{
-    background-color: #476C9D;
-    border: white;
-    cursor: pointer;
-}
-button.btn:hover{
-    background-color: #2E4C72;
-    color: white;
-}
-button.btn{
-    background-color: #476C9D;
-    border: white;
-    cursor: pointer;
-}
-button.btn:hover{
-    background-color: #7497CF;
 }
 /* ----- Main -----*/
 .main-section{
    margin-top: 6%;
    color: white;
 }
+button.btn{
+    background-color: #476C9D;
+    color: white;
+}
+/* Стили для больших экранов (например, для компьютеров) */
+@media (min-width: 1024px) {
+    /* Твои стили для компьютера */
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Твои стили для планшета */
+}
+
+/* Стили для телефонов */
+@media (max-width: 767px) {
+    /* Твои стили для телефона */
+}
+button.btn:hover{
+    background-color: #7497CF;
+}
 .header-section2{
-    margin-left: 50px;
     color: white;
     font-size: 20px;
-    margin-bottom: 20px;
 }
 #extraContent{
     display: none;
@@ -60,20 +59,6 @@ h2{
     font-family: 'Nico Moji';
 }
 /* ----- Column1 -----*/
-.col{
-    background-color: white;
-    border-radius: 25px;
-    width: 30%;
-    margin: 15px;
-    padding: 10px;
-}
-.col_layout{
-    text-align: left;
-}
-.profile-block{
-    display: inline-block;
-    margin-top: 5%;
-}
 #Gojo{
     height: 130px;
     width: 130px;
@@ -98,74 +83,56 @@ h2{
    background-color: #2E4C72;
    color: white;      
 }
+.col{
+    background-color: white;
+    box-shadow: "0px 4px 8px rgba(69, 101, 145, 0.5)";
+}
+
+.container_name {
+    background-color: #476C9D;
+}
 /* ----- Column2 -----*/
-#my_orders{
-    align-items: left;
-}
-.my_orders-block{
-    text-align: left;
-    padding: 5px;
-}
-.condition-block{
-    display: grid;
-    align-items: center;
-    text-align: left;
-    gap: 5px;
-    margin: 10px;
-}
 .condition{
     background-color: #2E4C72;
-    border-radius: 10px;
-    padding: 5px;
+
 }
 /* ----- Column3 -----*/
 .imgs{
     width: 35%;
     height: 35%;
-    border-radius: 10px;
-    margin: 5px;
 }
 /* ----- Column4 -----*/
-.settings_block{
-    display: grid;
-}
 .set{
     background-color: #7497CF;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    display: flex;
-    justify-content: space-between;
 }
 .settings_block .set_btn{
-    border-radius: 5px;
     background-color: white;
     border-color: #2E4C72;
     color: #2E4C72;
-    text-align: right;
+}
+.container .btn{
+    background-color: #476C9D;
+    color: white;
+}
+.container .btn:hover{
+    background-color: #2E4C72;
 }
 /* ----- Column5 -----*/
 .contact-block{
-    display: grid;
     color: #476C9D;
-    text-align: left;
-    margin-left: 10px;
 }
 /* ----- Footer -----*/
 blockquote{
     color: white;
 }
 .footer-section{
-    background-color: #476C9D;
-    color: white;
-    text-align: center;
-    padding: 10px;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    background-color: #476C9D;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+}
+#footer_text:hover{
+    color: #7497CF;
 }
 .footer-section a{
     text-decoration: none;

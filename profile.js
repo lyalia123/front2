@@ -2,78 +2,37 @@ const backColors = [
     "linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72)",
     "linear-gradient(to bottom right, #18283D, #2F4E75, #18283D)"
 ];
-const footBtnColor = [
-    "#476C9D",
-    "#18283D"
-];
-const setColor = [
-    "#7497CF",
-    "#35547E"
-];
-const containerColor = [
-    "#FFFFFF",
-    "#4A4A4A"
-];
-const navlinkColor = [
-    "#2E4C72",
-    "#FFFFFF"
-];
+const footBtnColor = ["#476C9D", "#18283D"];
+const setColor = ["#7497CF", "#35547E"];
+const containerColor = ["#FFFFFF", "#4A4A4A"];
+const navlinkColor = ["#2E4C72", "#FFFFFF"];
 
 let currentColorIndex = 0;
 
-/* Change Background */
-
 function changeBackground() {
-    currentColorIndex++;
-
-    if (currentColorIndex >= backColors.length) {
-        currentColorIndex = 0;
-    }
-
-    document.body.style.background = backColors[currentColorIndex];
-    
-    document.getElementById("myFooter").style.background = footBtnColor[currentColorIndex];
-
-    const buttons = document.getElementsByClassName('btn'); 
-    Array.from(buttons).forEach(btn => btn.style.backgroundColor = footBtnColor[currentColorIndex]);
-
-    const settings = document.getElementsByClassName('set'); 
-    Array.from(settings).forEach(set => set.style.backgroundColor = setColor[currentColorIndex]);
-
-    const conteiners = document.getElementsByClassName('col'); 
-    Array.from(conteiners).forEach(col => col.style.backgroundColor = containerColor[currentColorIndex]);
-
-    const menuText = document.getElementsByClassName('nav-link'); 
-    Array.from(menuText).forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
-
-    const navbar = document.getElementById('myNavbar');
-    if (navbar.classList.contains('navbar-light')) {
-        navbar.classList.remove('navbar-light', 'bg-light');
-        navbar.classList.add('navbar-dark', 'bg-dark');
-        document.body.classList.remove('bg-light');
-        document.body.classList.add('bg-dark');
-    } else {
-        navbar.classList.remove('navbar-dark', 'bg-dark');
-        navbar.classList.add('navbar-light', 'bg-light');
-        document.body.classList.remove('bg-dark');
-        document.body.classList.add('bg-light');
-    }
-
-    if (document.querySelector('img').style.transform == 'rotate(0deg)') {
-        document.querySelector('img').style.transform = 'rotate(180deg)';
-    }
-    else {
-        document.querySelector('img').style.transform = 'rotate(0deg)';
-    }
-
-    document.getElementById('changeBtn').addEventListener('click', function() {
-        let sound = document.getElementById('saveSound');
-        sound.play();
-    });
-
+    currentColorIndex = (currentColorIndex + 1) % backColors.length;
+    applyColors();
 }
 
-/* Manipulating Attributes */
+function applyColors() {
+    document.body.style.background = backColors[currentColorIndex];
+    document.getElementById("myFooter").style.background = footBtnColor[currentColorIndex];
+    Array.from(document.getElementsByClassName('btn')).forEach(btn => btn.style.backgroundColor = footBtnColor[currentColorIndex]);
+    Array.from(document.getElementsByClassName('set')).forEach(set => set.style.backgroundColor = setColor[currentColorIndex]);
+    Array.from(document.getElementsByClassName('col')).forEach(col => col.style.backgroundColor = containerColor[currentColorIndex]);
+    Array.from(document.getElementsByClassName('nav-link')).forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
+    updateNavbar();
+}
+
+function updateNavbar() {
+    const navbar = document.getElementById('myNavbar');
+    navbar.classList.toggle('navbar-light');
+    navbar.classList.toggle('navbar-dark');
+    navbar.classList.toggle('bg-light');
+    navbar.classList.toggle('bg-dark');
+    document.body.classList.toggle('bg-light');
+    document.body.classList.toggle('bg-dark');
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const readMoreButton = document.getElementById('readMoreBtn');
@@ -141,6 +100,88 @@ document.addEventListener('DOMContentLoaded', () => {
         menuItems[currentIndex].focus();
     });
 
+    
+    document.getElementById("geo_btn").addEventListener("click", function() {
+        const button = document.getElementById("geo_btn");
+        button.textContent = button.textContent === "Off" ? "On" : "Off";
+    });
+    document.getElementById("lang_btn").addEventListener("click", function() {
+        const button = document.getElementById("lang_btn");
+        button.textContent = button.textContent === "Off" ? "On" : "Off";
+    });
+    document.getElementById("notif_btn").addEventListener("click", function() {
+        const button = document.getElementById("notif_btn");
+        button.textContent = button.textContent === "Off" ? "On" : "Off";
+    });
+
+    
+});
+
+
+function loadProfile() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+        document.getElementById('fig_name').textContent = user.username;
+        document.getElementById('fig_email').textContent = user.email;
+    }
+    attachEventListeners();
+}
+
+function handleLogout() {
+    if (confirm("Save your data before logout?")) {
+        localStorage.setItem('username', document.getElementById('fig_name').textContent);
+        localStorage.setItem('email', document.getElementById('fig_email').textContent);
+    }
+    localStorage.removeItem('sessionActive');
+    window.location.href = "login.html";
+}
+
+function attachEventListeners() {
+    document.getElementById('changeBtn').addEventListener('click', changeBackground);
+    document.getElementById('logoutButton').addEventListener('click', handleLogout);
+    document.getElementById('timeBtn').addEventListener('click', () => {
+        document.getElementById('timeBtn').textContent = new Date().toLocaleTimeString();
+    });
+    document.getElementById('readMoreBtn').addEventListener('click', toggleReadMore);
+}
+
+function toggleReadMore() {
+    const extraContent = document.getElementById('extraContent');
+    extraContent.style.display = extraContent.style.display === 'block' ? 'none' : 'block';
+    document.getElementById('readMoreBtn').textContent = extraContent.style.display === 'block' ? 'Hide' : 'Read More';
+}
+document.addEventListener("DOMContentLoaded", function() {
+    let username = localStorage.getItem("username");
+    let email = localStorage.getItem("email");
+
+    if (username && email) {
+        document.getElementById("fig_name").textContent = username;
+        document.getElementById("fig_email").textContent = email;
+    }
+});
+
+// Добавление функциональности кнопки "Logout"
+document.getElementById("logoutButton").addEventListener("click", function() {
+    // Если нужно очистить данные после логаута
+    // localStorage.removeItem("username");
+    // localStorage.removeItem("email");
+
+    // Перенаправление на страницу логина
+    window.location.href = "login.html";
+});
+document.addEventListener('DOMContentLoaded', function () {
+    // Получаем данные из localStorage
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+
+    // Обновляем информацию на странице профиля
+    if (username) {
+        document.getElementById('fig_name').textContent = username;
+    }
+
+    if (email) {
+        document.getElementById('fig_email').textContent = email;
+    }
 });
 
 
