@@ -2,37 +2,92 @@ const backColors = [
     "linear-gradient(to bottom right, #476C9D, #7497CF, #2E4C72)",
     "linear-gradient(to bottom right, #18283D, #2F4E75, #18283D)"
 ];
-const footBtnColor = ["#476C9D", "#18283D"];
-const setColor = ["#7497CF", "#35547E"];
-const containerColor = ["#FFFFFF", "#4A4A4A"];
-const navlinkColor = ["#2E4C72", "#FFFFFF"];
+const footBtnColor = [
+    "#476C9D",
+    "#18283D"
+];
+const setColor = [
+    "#7497CF",
+    "#35547E"
+];
+const containerColor = [
+    "#FFFFFF",
+    "#506682"
+];
+const navlinkColor = [
+    "#2E4C72",
+    "#FFFFFF"
+];
+const btnColor2 = [
+    "#476C9D",
+    "#284163"
+];
 
 let currentColorIndex = 0;
 
+/* Change Background */
+
 function changeBackground() {
-    currentColorIndex = (currentColorIndex + 1) % backColors.length;
-    applyColors();
-}
+    currentColorIndex++;
 
-function applyColors() {
+    if (currentColorIndex >= backColors.length) {
+        currentColorIndex = 0;
+    }
+
     document.body.style.background = backColors[currentColorIndex];
+    
     document.getElementById("myFooter").style.background = footBtnColor[currentColorIndex];
-    Array.from(document.getElementsByClassName('btn')).forEach(btn => btn.style.backgroundColor = footBtnColor[currentColorIndex]);
-    Array.from(document.getElementsByClassName('set')).forEach(set => set.style.backgroundColor = setColor[currentColorIndex]);
-    Array.from(document.getElementsByClassName('col')).forEach(col => col.style.backgroundColor = containerColor[currentColorIndex]);
-    Array.from(document.getElementsByClassName('nav-link')).forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
-    updateNavbar();
+
+    const buttons = document.getElementsByClassName('btn'); 
+    Array.from(buttons).forEach(btn => btn.style.backgroundColor = footBtnColor[currentColorIndex]);
+    document.getElementById("changeBtn").style.backgroundColor = btnColor2[currentColorIndex];
+    document.getElementById("logoutButton").style.backgroundColor = btnColor2[currentColorIndex];
+
+    const conytainerName = document.getElementsByClassName('container_name'); 
+    Array.from(conytainerName).forEach(contName => contName.style.backgroundColor = footBtnColor[currentColorIndex]);
+
+    const settings = document.getElementsByClassName('set'); 
+    Array.from(settings).forEach(set => set.style.backgroundColor = setColor[currentColorIndex]);
+
+    const conteiners = document.getElementsByClassName('col'); 
+    Array.from(conteiners).forEach(col => col.style.backgroundColor = containerColor[currentColorIndex]);
+
+    document.getElementById("fig_name").style.color = navlinkColor[currentColorIndex];
+
+    const menuText = document.getElementsByClassName('nav-link'); 
+    Array.from(menuText).forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
+
+    const contactText = document.getElementsByClassName("contact_text");
+    Array.from(contactText).forEach(contText => contText.style.color = navlinkColor[currentColorIndex]);
+
+    const navbar = document.getElementById('myNavbar');
+    if (navbar.classList.contains('navbar-light')) {
+        navbar.classList.remove('navbar-light', 'bg-light');
+        navbar.classList.add('navbar-dark', 'bg-dark');
+        document.body.classList.remove('bg-light');
+        document.body.classList.add('bg-dark');
+    } else {
+        navbar.classList.remove('navbar-dark', 'bg-dark');
+        navbar.classList.add('navbar-light', 'bg-light');
+        document.body.classList.remove('bg-dark');
+        document.body.classList.add('bg-light');
+    }
+
+    if (document.querySelector('img').style.transform == 'rotate(0deg)') {
+        document.querySelector('img').style.transform = 'rotate(180deg)';
+    }
+    else {
+        document.querySelector('img').style.transform = 'rotate(0deg)';
+    }
+
+    document.getElementById('changeBtn').addEventListener('click', function() {
+        let sound = document.getElementById('saveSound');
+        sound.play();
+    });
+
 }
 
-function updateNavbar() {
-    const navbar = document.getElementById('myNavbar');
-    navbar.classList.toggle('navbar-light');
-    navbar.classList.toggle('navbar-dark');
-    navbar.classList.toggle('bg-light');
-    navbar.classList.toggle('bg-dark');
-    document.body.classList.toggle('bg-light');
-    document.body.classList.toggle('bg-dark');
-}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const readMoreButton = document.getElementById('readMoreBtn');
@@ -133,7 +188,7 @@ function handleLogout() {
         localStorage.setItem('email', document.getElementById('fig_email').textContent);
     }
     localStorage.removeItem('sessionActive');
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 function attachEventListeners() {
@@ -167,7 +222,7 @@ document.getElementById("logoutButton").addEventListener("click", function() {
     // localStorage.removeItem("email");
 
     // Перенаправление на страницу логина
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 });
 document.addEventListener('DOMContentLoaded', function () {
     // Получаем данные из localStorage

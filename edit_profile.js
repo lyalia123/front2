@@ -59,12 +59,20 @@ function changeBackground() {
     document.getElementById("changeBtn").style.backgroundColor = btnColor2[currentColorIndex];
     document.getElementById("readMoreBtn").style.backgroundColor = btnColor2[currentColorIndex];
     document.getElementById("timeBtn").style.backgroundColor = btnColor2[currentColorIndex];
+    document.getElementById("logoutButton").style.backgroundColor = btnColor2[currentColorIndex];
 
     const menuText = document.getElementsByClassName('nav-link'); 
     Array.from(menuText).forEach(navLink => navLink.style.color = navlinkColor[currentColorIndex]);
 
     const formText = document.getElementsByTagName('label'); 
     Array.from(formText).forEach(formLabel => formLabel.style.color = textColor[currentColorIndex]);
+
+    const select_class = document.getElementsByClassName('select-class'); 
+    Array.from(select_class).forEach(selClass => {
+        selClass.style.color = textColor[currentColorIndex]
+        selClass.style.backgroundColor = inputColor[currentColorIndex]
+        selClass.style.borderColor = borderColor[currentColorIndex]
+    });
         
     const inputText = document.getElementsByClassName('form-control'); 
     Array.from(inputText).forEach(formControl => {
@@ -200,7 +208,7 @@ document.getElementById("logoutButton").addEventListener("click", function() {
     localStorage.removeItem("password");
 
     // Redirect to the login page
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 });
 document.getElementById('saveButton').addEventListener('click', function (event) {
     event.preventDefault();

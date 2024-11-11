@@ -23,6 +23,7 @@ function changeBackground() {
 
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(btn => btn.style.backgroundColor = btnColor[currentColorIndex]);
+
     const changeBtn = document.getElementById("changeBtn");
     if (changeBtn) changeBtn.style.backgroundColor = btnColor2[currentColorIndex];
 
@@ -78,6 +79,7 @@ function changeBackground() {
     }
 }
 
+const categories = document.querySelectorAll('.nav-item .nav-link');
 categories.forEach(category => {
     category.addEventListener('click', (event) => {
         const selectedCategory = category.getAttribute('href');
@@ -86,36 +88,34 @@ categories.forEach(category => {
     });
 });
 
-
-    const submitNameButton = document.getElementById('submitNameButton');
-    if (submitNameButton) {
-        submitNameButton.addEventListener('click', () => {
-            const name = document.getElementById('nameInput').value;
-            const greetingMessage = document.getElementById('greetingMessage');
-            if (greetingMessage) {
-                greetingMessage.textContent = name.trim() ? `Hello, ${name}! Thank you for your question.` : 'Please enter your name.';
-                greetingMessage.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    greetingMessage.style.transform = 'scale(1)';
-                }, 500);
-            }
-        });
-    }
-
-    document.addEventListener('keydown', (event) => {
-        const categories = document.querySelectorAll('.nav-item .nav-link');
-        let currentIndex = Array.from(categories).findIndex(item => document.activeElement === item);
-        if (event.key === 'ArrowRight' && currentIndex < categories.length - 1) {
-            categories[currentIndex + 1].focus();
-        } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
-            categories[currentIndex - 1].focus();
+const submitNameButton = document.getElementById('submitNameButton');
+if (submitNameButton) {
+    submitNameButton.addEventListener('click', () => {
+        const name = document.getElementById('nameInput').value;
+        const greetingMessage = document.getElementById('greetingMessage');
+        if (greetingMessage) {
+            greetingMessage.textContent = name.trim() ? `Hello, ${name}! Thank you for your question.` : 'Please enter your name.';
+            greetingMessage.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                greetingMessage.style.transform = 'scale(1)';
+            }, 500);
         }
     });
+}
 
-    const logoutButton = document.getElementById("logoutButton");
-    if (logoutButton) {
-        logoutButton.addEventListener("click", () => {
-            window.location.href = "login.html";
-        });
+document.addEventListener('keydown', (event) => {
+    const categories = document.querySelectorAll('.nav-item .nav-link');
+    let currentIndex = Array.from(categories).findIndex(item => document.activeElement === item);
+    if (event.key === 'ArrowRight' && currentIndex < categories.length - 1) {
+        categories[currentIndex + 1].focus();
+    } else if (event.key === 'ArrowLeft' && currentIndex > 0) {
+        categories[currentIndex - 1].focus();
     }
+});
 
+const logoutButtonElement = document.getElementById("logoutButton");
+if (logoutButtonElement) {
+    logoutButtonElement.addEventListener("click", () => {
+        window.location.href = "index.html";
+    });
+}

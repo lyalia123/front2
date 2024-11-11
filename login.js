@@ -81,7 +81,7 @@ function checkUserSession() {
 function logout() {
     localStorage.removeItem('session');
     alert("You have logged out.");
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 function handleRegisterButton() {
     const registerButton = document.getElementById("registerButton");

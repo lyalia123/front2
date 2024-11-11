@@ -72,23 +72,17 @@ input {
     border-radius: 10px;
     font-size: 16px;
 }
-
-button {
-    width: 80%;
-    padding: 15px;
-    margin-top: 20px;
+button.btn{
     background-color: #476C9D;
-    border: none;
-    border-radius: 10px;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
 }
-
-button:hover {
-    background-color: #365f8a;
+button.btn:hover{
+    background-color: #7497CF;
+    color: white;
 }
-
+#resetButton{
+    background-color: red;
+}
 .social-login {
     margin-top: 30px;
     display: flex;
@@ -119,18 +113,7 @@ button:hover {
     color: white;
 }
 
-.footer-section{
-    background-color: #476C9D;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-}
-#footer_text:hover{
-    color: #7497CF;
-}
-.footer-section a{
-    text-decoration: none;
-    color: white;
-}
+
 
 form {
     opacity: 0;
@@ -158,21 +141,10 @@ form {
     }
 }
 .button-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 80%;
-    margin-top: 20px;
 }
 
 button {
-    width: 48%;
-    padding: 15px;
-    margin-top: 10px;
-    background-color: #476C9D;
-    border: none;
-    border-radius: 10px;
-    color: white;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -183,11 +155,4 @@ button:hover {
     transform: translateY(-3px);
 }
 
-#registerButton {
-    background-color: #7497CF;
-}
-
-#registerButton:hover {
-    background-color: #476C9D;
-}
 

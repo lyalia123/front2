@@ -30,90 +30,86 @@ button.btn:hover{
     background-color: #2E4C72;
     color: white;
 }
-main {
-    flex: 1; 
-    margin-top: 6%;
-}
-
-.sign_in {
-    background-color: white;
-    color: #476C9D;
-    transition: color 0.3s ease, border 0.3s ease; 
-    border: 10px solid transparent;
-    border-radius: 10px;
-    text-decoration: none;
-}
-.sign_in:hover {
-    background-color: #2E4C72;
-    color: white;
-    border: 15px solid transparent;
-}
-
-.cods h1 {
+.background-text {
     font-family: 'Nico Moji', sans-serif;
-    margin: 0;
-    font-size: 40px;
+    position: absolute;
+    font-size: 15rem;
+    color: rgba(255, 255, 255, 0.15); 
+    font-weight: bold;
+    z-index: 1;
+    letter-spacing: 10px; 
+    right: 10%;
+    top: 20%; 
 }
 .why {
     font-family: 'Nico Moji', sans-serif;
-    margin: 0;
     font-size: 30px;
 }
-
 .info {
-    width: 50%;
-    height: 800px;
-    display: flex;
-    align-items: center;
     font-size: 20px;
-    padding-left: 40px;
-    color: white;
 }
-
-.cards-section {
-    margin-top: 50px; 
-}
-
 .custom-card {
     background-color: white;
     border: none;
-    border-radius: 20px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #2E4C72;
 }
-
 .custom-card .card-title {
     font-family: 'Nico Moji', sans-serif;
     font-size: 1.5rem;
+    color: #2E4C72;
 }
-
 .custom-card .card-text {
     font-size: 1rem;
+    color: #2E4C72;
 }
-
 .custom-card:hover {
     transform: translateY(-10px); 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
 }
-
-.button {
-    padding: 15px 30px;
-    font-size: 20px;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    background-color: #476C9D;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.5s ease, color 0.5s ease;
+.co, .ds {
+    display: block;
+    line-height: 0.85;
+    font-size: 16rem; 
 }
-
-.button:hover {
-    background-color: #3a5a77;
+.additional-questions {
+    background-color: white;
+    color: #2E4C72;
 }
-
+.question-heading {
+    font-size: 1.4rem;
+    color: #2E4C72;
+}
+.question-input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.question-input {
+    font-size: 0.9rem; 
+    border-color: #476C9D;
+    flex: 1;
+}
+.accordion-item{
+    color: #2E4C72;
+}
+.accordion-button{
+    color: #2E4C72;
+}
+.greeting-message {
+    font-size: 1rem; 
+    color: #2E4C72;
+}
+.greetingessage {
+    transition: transform 0.5s ease-out;
+}
+.question-section {
+    flex-grow: 1;
+}
+.toggle-mode-button {
+    margin-left: 20px; 
+    white-space: nowrap; 
+}
 .footer-section{
     background-color: #476C9D;
     border-top-left-radius: 40px;
@@ -126,145 +122,3 @@ main {
     text-decoration: none;
     color: white;
 }
-
-.background-text {
-    font-family: 'Nico Moji', sans-serif;
-    position: absolute;
-    font-size: 15rem;
-    color: rgba(255, 255, 255, 0.15); 
-    font-weight: bold;
-    z-index: 1;
-    letter-spacing: 10px; 
-    right: 10%;
-    top: 20%; 
-}
-.co, .ds {
-    display: block;
-    line-height: 0.85;
-}
-
-.co {
-    font-size: 16rem; 
-}
-
-.ds {
-    font-size: 16rem; 
-}
-.sign-in-btn {
-    background-color: white;
-    color: #476C9D;
-    border-radius: 10px;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 10px solid transparent;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.sign-in-btn:hover {
-    background-color: #2E4C72;
-    color: white;
-    border: 15px solid transparent;
-}
-
-@media (max-width: 992px) {
-    .custom-link {
-        margin-right: 0;
-        text-align: center;
-        display: block;
-        margin-bottom: 10px;
-    }
-}
-
-
-.h2{
-    font-family: 'Nico Moji', sans-serif;
-}
-
-
-.additional-questions {
-    margin-top: 30px; /* Reduced margin */
-    padding: 15px;
-    background-color: white; /* Matches the card style */
-    border-radius: 10px; /* Slightly smaller rounded corners */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-/* Стили для больших экранов (например, для компьютеров) */
-@media (min-width: 1024px) {
-    /* Твои стили для компьютера */
-}
-
-/* Стили для планшетов */
-@media (min-width: 768px) and (max-width: 1023px) {
-    /* Твои стили для планшета */
-}
-
-/* Стили для телефонов */
-@media (max-width: 767px) {
-    /* Твои стили для телефона */
-}
-
-.question-heading {
-    font-family: 'Inder', sans-serif;
-    font-size: 1.4rem; /* Smaller heading size */
-    color: #2E4C72;
-    margin-bottom: 15px;
-}
-
-.question-input-container {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Reduced gap between input and button */
-}
-
-.question-input {
-    padding: 8px;
-    font-size: 0.9rem; /* Slightly smaller input text */
-    border-radius: 8px;
-    border-color: #476C9D;
-    flex: 1;
-}
-
-
-.accordion-item{
-    color: #2E4C72;
-}
-.accordion-button{
-    color: #2E4C72;
-}
-.greeting-message {
-    margin-top: 15px; /* Reduced margin above the message */
-    font-size: 1rem; /* Smaller message text */
-    color: #2E4C72;
-    font-family: 'Inder', sans-serif;
-}
-.greetingessage {
-    transition: transform 0.5s ease-out;
-}
-#languageSelector{
-    color: #2E4C72;
-}
-
-.language-selector:hover {
-    border-color: #2E4C72; 
-}
-
-
-@media (max-width: 768px) {
-    .navbar .language-selector {
-        margin-top: 5px; /* Р”Р°РµРј РѕС‚СЃС‚СѓРї СЃРІРµСЂС…Сѓ РґР»СЏ РјРѕР±РёР»СЊРЅС‹С… СЌРєСЂР°РЅРѕРІ */
-        width: 100%; /* Р Р°СЃС‚СЏРіРёРІР°РµРј РЅР° РІСЃСЋ С€РёСЂРёРЅСѓ РґР»СЏ РјРѕР±РёР»СЊРЅС‹С… СѓСЃС‚СЂРѕР№СЃС‚РІ */
-    }
-}
-/* РЎС‚РёР»Рё РґР»СЏ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ СЂР°Р·РґРµР»Р° СЃ РІРѕРїСЂРѕСЃР°РјРё Рё РєРЅРѕРїРєРё РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ */
-
-.question-section {
-    flex-grow: 1;
-}
-
-.toggle-mode-button {
-    margin-left: 20px; /* РћС‚СЃС‚СѓРї РґР»СЏ РєРЅРѕРїРєРё */
-    white-space: nowrap; /* Р§С‚РѕР±С‹ С‚РµРєСЃС‚ РєРЅРѕРїРєРё РЅРµ РїРµСЂРµРЅРѕСЃРёР»СЃСЏ РЅР° РґСЂСѓРіСѓСЋ СЃС‚СЂРѕРєСѓ */
-}
-

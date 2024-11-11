@@ -50,7 +50,7 @@ function handleRegistration(event) {
         const user = { username, email, password };
         localStorage.setItem('user', JSON.stringify(user));
         alert("Registration successful! You can now log in.");
-        window.location.href = 'login.html';  // Рекомендуется перенаправить на страницу входа
+        window.location.href = 'index.html';  // Рекомендуется перенаправить на страницу входа
     }
 }
 
@@ -72,7 +72,7 @@ function handleLogin(event) {
 function logout() {
     localStorage.removeItem('session');
     alert("You have logged out.");
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 function setError(fieldId, condition, message) {
@@ -96,6 +96,4 @@ document.getElementById("registrationForm").addEventListener("submit", function(
     localStorage.setItem("username", username);
     localStorage.setItem("email", email);
 
-    // Перенаправление на страницу профиля
-    window.location.href = "profile.html";
 });

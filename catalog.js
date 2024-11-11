@@ -162,7 +162,7 @@ document.getElementById("logoutButton").addEventListener("click", function() {
   // localStorage.removeItem("email");
 
   // Перенаправление на страницу логина
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 // // Call displayGreeting when the page loads
